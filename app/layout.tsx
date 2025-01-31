@@ -18,7 +18,6 @@ export default function RootLayout({
       <html lang="en">
         <body>
           <PageHeader />
-         
           {children}
         </body>
       </html>

@@ -1,13 +1,20 @@
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
 const PageHeader = () => {
   return (
-    <header>
-      <div  className="w-full max-w-screen-xl px-2.5 lg:px-20 relative mx-auto">
+    <header className="sticky inset-x-0 top-0 z-30 w-full transition-all">
+      <div  className="w-full max-w-screen-xl px-2.5 lg:px-20 relative mx-auto border-b">
           <div className="flex justify-between items-center h-14">
-            <h1>LOGO</h1>
+          <Image src="/logo.png" alt="Logo" width={100} height={100} />
             <div>
               <SignedOut>
-                <SignInButton />
+                <SignInButton>
+                  <Button className="bg-black">Sign In</Button>
+                </SignInButton>
+                <SignUpButton>
+                <Button className="bg-black ml-2">Sign Up</Button>
+              </SignUpButton>
               </SignedOut>
               <SignedIn>
                 <UserButton />
